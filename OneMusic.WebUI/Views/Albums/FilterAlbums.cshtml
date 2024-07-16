@@ -1,0 +1,44 @@
+﻿<form method="post" asp-action="FilterAlbums" asp-controller="Albums">
+    <div class="row">
+        <div class="form-group col-md-4">
+            <label for="artist">Sanatçı Seçin</label>
+            <select class="form-control" asp-items="@ViewBag.Artist" name="artist" id="artist">
+                <option value="">Sanatçı Seçin</option>
+            </select>
+        </div>
+        <div class="form-group col-md-4">
+            <label for="category">Tür Seçin</label>
+            <select class="form-control" asp-items="@ViewBag.Categories" name="category" id="category">
+                <option value="">Tür Seçin</option>
+            </select>
+        </div>
+        <div class="form-group col-md-4 align-self-end">
+            <button type="submit" class="btn btn-primary btn-block">Ara</button>
+        </div>
+    </div>
+</form>
+
+<style>
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+
+    .form-control {
+        border-radius: 0.25rem;
+        box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+        transition: all 0.3s ease-in-out;
+    }
+
+        .form-control:focus {
+            border-color: #007bff;
+            box-shadow: 0 0.25rem 0.5rem rgba(0, 123, 255, 0.25);
+        }
+
+    .btn {
+        transition: background-color 0.3s ease-in-out;
+    }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+</style>

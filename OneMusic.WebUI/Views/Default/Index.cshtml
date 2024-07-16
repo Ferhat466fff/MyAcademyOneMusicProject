@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/UILayout/Index.cshtml";
+}
+
+<!-- ##### Hero Area Start ##### -->
+@await Component.InvokeAsync("_DefaultBannerComponent")@*Component-->Partial view gibi düşün  Banner-->Afiş projenin en üstünedeki resim yazı.*@
+<!-- ##### Hero Area End ##### -->
+<!-- ##### Latest Albums Area Start ##### -->
+@await Component.InvokeAsync("_DefaultAlbumComponent")@*Son eklenen albümler kısmı*@
+<!-- ##### Latest Albums Area End ##### -->
+<!-- ##### Buy Now Area Start ##### -->
+@await Component.InvokeAsync("_DefaultAlbumSongSaleComponent")@**@
+<!-- ##### Buy Now Area End ##### -->
+<!-- ##### Featured Artist Area Start ##### -->
+@await Component.InvokeAsync("_DefaultPopularArtistComponent")
+<!-- ##### Featured Artist Area End ##### -->
+<!-- ##### Miscellaneous Area Start ##### -->
+@await Component.InvokeAsync("_DefaultMiscellaneousTopComponent")
+<!-- ##### Miscellaneous Area End ##### -->
+<!-- ##### Contact Area Start ##### -->
+@await Component.InvokeAsync("_DefaultMessageComponent")
+<!-- ##### Contact Area End ##### -->
+

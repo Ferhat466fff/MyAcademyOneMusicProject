@@ -1,0 +1,25 @@
+﻿@model Singer
+@{
+    ViewData["Title"] = "UpdateSinger";
+    Layout = "~/Views/AdminLayoutController/Index.cshtml";
+}
+
+<h3> Sanatçı Güncelleme Sayfası</h3>
+
+<form method="post">
+
+    @Html.HiddenFor(x => x.SingerId)
+    <label>Resim Url</label>
+    <input type="text" asp-for="ImageUrl" class="form-control" />
+    <br />
+
+    <label>Sanatçı Adı</label>
+    @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+    @*<input type="text" asp-for="Title" class="form-control" />-->üsttekiyle alttaki aynı*@
+    <br />
+
+    <button class="btn btn-outline-primary">Güncelle</button>
+
+</form>
+
+

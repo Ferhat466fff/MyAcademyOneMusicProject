@@ -1,0 +1,45 @@
+﻿@model List<Album>
+
+<section class="latest-albums-area section-padding-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="section-heading style-2">
+                    <p>En Yeni Albümleri Keşfedin</p>
+                    <h2>Son Eklenen Albümler</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-9">
+                <div class="ablums-text text-center mb-70">
+                    <p>
+                        Müzik tutkunlarına hitap eden platformumuzda, pop müzikten rock müziğe, arabeskten halk müziğine kadar her türden müziği bulabilirsiniz. Müzik zevkiniz ne olursa olsun, geniş arşivimizde sizi mutlu edecek bir şeyler mutlaka var.
+
+                        Son Eklenenler bölümümüzde, en yeni albümleri keşfedebilir ve müzik dünyasındaki en son gelişmeleri takip edebilirsiniz. Alttaki albümleri inceleyerek en güncel müziklere hızlıca erişebilir, favori sanatçılarınızın son eserlerini dinleyebilirsiniz.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="albums-slideshow owl-carousel">
+                    <!-- Single Album -->
+                    @foreach (var item in Model)
+                    {
+                        <div class="single-album">
+                            <img style="height:200px;width:200px" src="@item.CoverImage" alt="">
+                            <div class="album-info">
+                                <a href="#">
+                                    <h5>@item.AppUser.Name @item.AppUser.Surname</h5>@*İlişkili tablo olduğu için appuser aldık.*@
+                                </a>
+                                <p>@item.AlbumName</p>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

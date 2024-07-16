@@ -1,0 +1,49 @@
+﻿@model ArtistEditViewModel
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Artist/Views/ArtistLayout/Index.cshtml";
+}
+
+<h3>Profil Bilgilerim Güncelleme Sayfası</h3>
+
+<form method="post" enctype="multipart/form-data"> @*enctype="multipart/form-data Dosyadan bir şeyler seçebilmek için kullanıyoruz.*@
+
+    <div class="text-center">
+        <img src="@Model.ImageUrl"style="width:150px;height:150px"/>
+    </div>
+
+
+
+    <label>Ad</label>
+    <input type="text" asp-for="Name" class="form-control" required />@*Boş geçilemesin demek rrequired*@
+    <br />
+    <label>Soyad</label>
+    <input type="text" asp-for="Surname" class="form-control" required />
+    <br />
+    <label>Kullanıcı Adı</label>
+    <input type="text" asp-for="UserName" class="form-control" required />
+    <br />
+    <label>Email</label>
+    <input type="email" asp-for="Email" class="form-control" required />
+    <br />
+    <label>Telefon No</label>
+    <input type="text" asp-for="PhoneNumber" class="form-control" />
+    <br />
+    <input type="hidden" asp-for="ImageUrl" class="form-control"/>
+    <label>Profil Resmi</label>
+    <input type="file" accept="image/*" asp-for="ImageFile" class="form-control"  />@*Dosyadan Resim Seçme Alanı*@
+    <br />
+    <label>Mevcut Şifreniz</label>
+    <input type="password" asp-for="OldPassword" class="form-control" required />
+    <br />
+    <label>Yeni Şifreniz</label>
+    <input type="password" asp-for="NewPassword" class="form-control" />
+    <br />
+    <label>Yeni Şifre Tekrar</label>
+    <input type="password" asp-for="ConfirmPassword" class="form-control" />
+
+    <p style="color:red"> @Html.ValidationSummary()</p>@*Hata Mesajları*@
+
+    <button class="btn btn-primary">Bilgileri Güncelle</button>
+</form>
+

@@ -1,0 +1,58 @@
+﻿@model List<Contact>
+<section class="contact-area section-padding-100-0">
+    <div class="container">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+
+
+                <div class="col-12 col-lg-3">
+                    <div class="contact-content mb-100">
+                        <!-- Title -->
+                        <div class="contact-title mb-50">
+                            <h5>Adres Bilgisi</h5>
+                        </div>
+
+                        <!-- Single Contact Info -->
+                        <div class="single-contact-info d-flex align-items-center">
+                            <div class="icon mr-30">
+                                <span class="icon-placeholder"></span>
+                            </div>
+                            <p>@item.Adress</p>
+                        </div>
+
+                        <!-- Single Contact Info -->
+                        <div class="single-contact-info d-flex align-items-center">
+                            <div class="icon mr-30">
+                                <span class="icon-smartphone"></span>
+                            </div>
+                            <p>+90 @item.Phone</p>
+                        </div>
+
+                        <!-- Single Contact Info -->
+                        <div class="single-contact-info d-flex align-items-center">
+                            <div class="icon mr-30">
+                                <span class="icon-mail"></span>
+                            </div>
+                            <p>@item.Email</p>
+                        </div>
+
+                        <!-- Contact Social Info -->
+                        <div class="contact-social-info mt-50">
+                            <a href="https://github.com/Ferhat466fff" data-toggle="tooltip" data-placement="top" title="Github"><i class="fa fa-github" aria-hidden="true"></i></a>
+                            <a href="https://tr.linkedin.com/in/ferhat-sakar-61002b2a6 " data-toggle="tooltip" data-placement="top" title="Linkedin"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-9">
+                    <!-- ##### Google Maps ##### -->
+                    <div class="map-area mb-100">
+                        <iframe src="@item.MapUrl" allowfullscreen></iframe>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>

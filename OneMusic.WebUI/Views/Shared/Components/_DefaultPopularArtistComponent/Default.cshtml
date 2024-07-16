@@ -1,0 +1,39 @@
+﻿@model List<Song>
+
+
+<section class="featured-artist-area section-padding-100 bg-img bg-overlay bg-fixed" style="background-image: url(/one-music-gh-pages/img/bg-img/b1.jpg);">
+        <div class="container">
+        @foreach (var item in Model)
+        {
+            <div class="row align-items-end">
+                <div class="col-12 col-md-5 col-lg-2">
+                    <div class="featured-artist-thumb">
+                        <img src="@item.Album.CoverImage" style="height:250px;width:350px" alt="">
+                    </div>
+                </div>
+                <div class="col-12 col-md-7 col-lg-8">
+                    <div class="featured-artist-content">
+                        <!-- Section Heading -->
+                        <div class="section-heading white text-left mb-30">
+                            <p>Öne Çıkan Albüm:</p>
+                            <h2>Medcezir</h2>
+                        </div>
+                        <p>
+                            Ceza'nın "Medcezir" şarkısı, sanatçının 2004 yılında yayımlanan "Rapstar" albümünde yer almaktadır. Bu albüm, Ceza'nın Türk rap müziğine getirdiği yenilikçi tarzı ve kendine özgü anlatımı ile büyük yankı uyandırmıştır. "Medcezir" şarkısı, Ceza'nın duygusal ve düşünsel derinliğini dinleyicilere etkileyici bir şekilde sunduğu önemli eserlerden biridir.
+
+                            Şarkı, Ceza'nın Türk toplumuna dair gözlemlerini ve içsel yolculuklarını içten ve vurucu bir şekilde aktardığı bir yapıttır.
+                        </p>
+                        <div class="song-play-area">
+                            <div class="song-name">
+                                <p>En Popüler Şarkımız.</p>
+                            </div>
+                            <audio preload="auto" controls>
+                                <source src="~/Songs/@item.SongUrl">
+                            </audio>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            }
+        </div>
+    </section>

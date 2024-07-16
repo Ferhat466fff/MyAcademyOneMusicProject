@@ -1,0 +1,51 @@
+﻿@model List<Song>
+
+
+<div class="oneMusic-buy-now-area mb-100">
+    <div class="container">
+        <h2>Yeni Albüm Satın Alın</h2>
+        <br /> <br />
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <!-- Single Album Area -->
+                <div class="col-12 col-sm-6 col-md-3">
+                    <div class="single-album-area">
+                        <div class="album-info">
+                            <a href="#">
+                                <h5>@item.Album.AlbumName</h5>
+                            </a>
+
+                        </div>
+                        <div class="album-thumb">
+                            <img style="width:250px; height:200px;" src="@item.Album.CoverImage" alt="">
+                            <!-- Album Price -->
+                            <div class="album-price">
+                                <p>@item.Album.Price.ToString("n2") ₺</p>
+                            </div>
+                            <!-- Play Icon -->
+                            <div>
+
+                                <audio preload="auto" controls>
+                                     <source src="/Songs/@item.SongUrl"> 
+                                </audio>
+                            </div>
+                        </div>
+                      
+                    </div>
+                </div>
+            }
+        </div>
+
+
+        <br /> <br /> <br />
+        <div class="row">
+            <div class="col-12">
+                <div class="load-more-btn text-center">
+                    <a href="#" class="btn oneMusic-btn">Daha Fazla Yükle <i class="fa fa-angle-double-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
